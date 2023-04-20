@@ -1,1 +1,324 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/vars";
+@import "./assets/scss/common";
+@import "./assets/scss/mat-theme";
+
+.container {
+  max-width: 1297px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  .mat-mdc-progress-spinner {
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: calc((100vh - 24px) / 2);
+    transform: translate(-50%, -100%);
+  }
+}
+
+.table-wraper {
+  background: var(--white);
+  border-radius: 8px;
+  margin-top: 24px;
+  height: calc(100vh - 24px);
+  overflow-y: auto;
+  box-shadow: 0px 2px 2px rgba(black, 0.12);
+  display: flex;
+  flex-direction: column;
+
+  .mat-mdc-table {
+    width: 100%;
+    table-layout: fixed;
+
+    &.resizing {
+      cursor: col-resize;
+    }
+
+    .mat-mdc-header-row {
+      background-color: var(--light-grey);
+      left: 0;
+      min-height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .mat-mdc-row {
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background-color: var(--white);
+
+        .mat-mdc-cell:last-of-type {
+          &::before {
+            opacity: 1;
+          }
+        }
+
+        .edit-btn {
+          opacity: 0.75;
+          position: relative;
+          z-index: 10;
+        }
+      }
+
+      &.selectedRow {
+        background-color: var(--mat-row-select);
+
+        &:hover {
+          background-color: var(--mat-row-select);
+
+          .mat-mdc-cell:last-of-type {
+            &::before {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      .actions {
+        margin-left: auto;
+        text-align: right;
+        position: relative;
+        z-index: 10;
+
+        .mdc-button + .mdc-button{
+          margin-left: 8px;
+        }
+      }
+
+      .edit-btn {
+        margin-left: auto;
+        color: var(--pr-text-color);
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        opacity: 0;
+        transition: opacity .3s;
+
+        .mat-icon {
+          width: 19px;
+          height: 19px;
+          font-size: 19px;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .mdc-data-table__cell,
+  .mdc-data-table__header-cell,
+  .mat-mdc-paginator,
+  .mat-mdc-select-value {
+    font-weight: normal;
+    color: var(--pr-text-color);
+  }
+
+  .mat-mdc-cell:first-of-type,
+  .mat-mdc-header-cell:first-of-type,
+  .mat-mdc-footer-cell:first-of-type {
+    padding-left: 12px;
+    padding-right: 0;
+    width: 60px;
+    min-width: auto;
+  }
+
+  .mat-mdc-cell:last-of-type,
+  .mat-mdc-header-cell:last-of-type,
+  .mat-mdc-footer-cell:last-of-type {
+    width: 260px;
+    min-width: auto;
+  }
+
+  .mat-mdc-cell:last-of-type {
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background-image: linear-gradient(to right, var(--white) 70%, var(--light-grey));
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+  }
+
+  .mdc-data-table__header-cell {
+    position: relative;
+    overflow: visible;
+
+    &:not(:last-child) {
+
+      &:hover {
+        .resize-holder {
+          opacity: 1;
+        }
+      }
+
+      .resize-holder {
+        cursor: col-resize;
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        right: -10px;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity .3s;
+
+        &::before {
+          content: "";
+          width: 1px;
+          height: 32px;
+          position: absolute;
+          background-color: var(--light-grey-darken);
+          left: 8px;
+          top: 50%;
+          margin-top: -16px;
+        }
+
+        &::after {
+          content: "";
+          width: 1px;
+          height: 32px;
+          position: absolute;
+          background-color: var(--light-grey-darken);
+          right: 8px;
+          top: 50%;
+          margin-top: -16px;
+        }
+      }
+    }
+  }
+
+  .mdc-data-table__cell {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
+
+  .mdc-data-table__cell, .mdc-data-table__header-cell {
+    padding: 0 12px;
+
+    .cell-content {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  .mat-mdc-paginator {
+    background: var(--white);
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    margin-top: auto;
+
+    .mat-mdc-paginator-container {
+      justify-content: space-between;
+      padding-left: 16px;
+    }
+  }
+
+  .error-title {
+    color: var(--mat-error);
+    padding: 16px;
+    margin: auto;
+  }
+
+}
+
+.table-header {
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .mat-icon {
+    color: var(--dark-grey);
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    margin: auto;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+
+.dialogConfirmation {
+  &.cdk-overlay-pane {
+    max-width: 90vw !important;
+  }
+
+  .mat-mdc-dialog-container {
+    width: 560px;
+    max-width: 100%;
+    border-radius: 4px;
+
+    .mat-mdc-dialog-title {
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.15px;
+      padding: 20px 24px 0;
+      color: var(--pr-text-color);
+
+      &::before {
+        height: auto;
+      }
+    }
+
+    .mdc-dialog__content {
+      color: var(--pr-text-color);
+    }
+  }
+}
+
+.notEditableInput {
+  border: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 9px 4px;
+  pointer-events: none;
+  width: 100%;
+  min-width: 100px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &.editableInput {
+    background-color: var(--mat-input-success);
+    pointer-events: all;
+
+    &.ng-touched.ng-invalid {
+      background-color: var(--mat-input-error);
+    }
+  }
+}

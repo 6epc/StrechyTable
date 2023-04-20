@@ -1,0 +1,124 @@
+{
+  "users": [
+      {
+          "name": "Александр",
+          "surname": "Петров",
+          "email": "petrov@mail.ru",
+          "phone": "+79061856195"
+      },
+      {
+          "name": "Павел",
+          "surname": "Прилучный",
+          "email": "ppl98@mail.ru",
+          "phone": "+79891456090"
+      },
+      {
+          "name": "Иван",
+          "surname": "Охлобыстин",
+          "email": "iohl_990@mail.ru",
+          "phone": "+79053856195"
+      },
+      {
+          "name": "Марина",
+          "surname": "Александрова",
+          "email": "malexan21@mail.ru",
+          "phone": "+79052206950"
+      },
+      {
+          "name": "Юрий",
+          "surname": "Борисов",
+          "email": "borisov@gmail.com",
+          "phone": ""
+      },
+      {
+        "name": "Кристин",
+        "surname": "Полат",
+        "email": "lacus.quisque.purus@yahoo.ca",
+        "phone": "1-488-526-8135"
+      },
+      {
+        "name": "Келли",
+        "surname": "Браво",
+        "email": "ut.nec.urna@outlook.edu",
+        "phone": "(495) 287-8886"
+      },
+      {
+        "name": "Эмерсон",
+        "surname": "Молина",
+        "email": "nisi@aol.couk",
+        "phone": "1-680-446-8626"
+      },
+      {
+        "name": "Иллана",
+        "surname": "Карадаг",
+        "email": "tempus.mauris@protonmail.couk",
+        "phone": "(677) 693-1547"
+      },
+      {
+        "name": "Сейд",
+        "surname": "Аталай",
+        "email": "rhoncus@protonmail.edu",
+        "phone": "1-846-185-1396"
+      },
+      {
+        "name": "Аббот",
+        "surname": "ван Дам",
+        "email": "aliquam.erat.volutpat@google.net",
+        "phone": "(542) 676-6143"
+      },
+      {
+        "name": "Таша",
+        "surname": "Руиз",
+        "email": "ut.sagittis@google.couk",
+        "phone": "1-301-584-1328"
+      },
+      {
+        "name": "Тимоти",
+        "surname": "Велдэн",
+        "email": "cras.eget.nisi@yahoo.net",
+        "phone": "1-746-931-4411"
+      },
+      {
+        "name": "Клейтон",
+        "surname": "Мендез",
+        "email": "vitae.aliquam@icloud.ca",
+        "phone": "(864) 542-5136"
+      },
+      {
+        "name": "Кейтлин",
+        "surname": "Сото",
+        "email": "penatibus.et@yahoo.com",
+        "phone": "1-775-797-4312"
+      },
+      {
+        "name": "Дэмиан",
+        "surname": "Нунэз",
+        "email": "odio@google.ca",
+        "phone": "1-846-435-4842"
+      },
+      {
+        "name": "Камден",
+        "surname": "Каракос",
+        "email": "nunc.in@outlook.net",
+        "phone": "(974) 312-7181"
+      },
+      {
+        "name": "Иола",
+        "surname": "Каратас",
+        "email": "tristique.neque@icloud.edu",
+        "phone": "1-355-565-7827"
+      },
+      {
+        "name": "Броди",
+        "surname": "Смулдерз",
+        "email": "luctus.curabitur@hotmail.edu",
+        "phone": "1-181-233-2811"
+      },
+      {
+        "name": "Эдвард",
+        "surname": "Дундарь",
+        "email": "facilisis.eget.ipsum@google.net",
+        "phone": "1-507-864-3965"
+      }
+  ]
+}

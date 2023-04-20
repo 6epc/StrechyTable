@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+
+@include mat.core();
+
+$custom-color-palette: (
+  50 : #e8f6eb,
+  100 : #c5e9cd,
+  200 : #9fdaab,
+  300 : #79cb89,
+  400 : #5cc070,
+  500 : #3fb557,
+  600 : #39ae4f,
+  700 : #31a546,
+  800 : #299d3c,
+  900 : #1b8d2c,
+  A100 : #c6ffcd,
+  A200 : #93ffa0,
+  A400 : #60ff74,
+  A700 : #47ff5d,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$material-primary: mat.define-palette($custom-color-palette, 600, 100, 800);
+$material-accent: mat.define-palette(mat.$deep-purple-palette);
+$material-warn: mat.define-palette(mat.$red-palette);
+
+$theme-light: mat.define-light-theme(
+  (
+    color: (
+      primary: $material-primary,
+      accent: $material-accent,
+      warn: $material-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($theme-light);
+
+:root {
+  --mat-input-success: #{mat.get-color-from-palette($custom-color-palette, 100)};
+  --mat-row-select: #{mat.get-color-from-palette($custom-color-palette, 50)};
+
+  --mat-input-error: #{mat.get-color-from-palette(mat.$red-palette, 100)};
+  --mat-error: #{mat.get-color-from-palette(mat.$red-palette, 500)};
+}
