@@ -146,7 +146,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       length = Math.max(length, 0);
       const startIndex = page * pageSize;
       const endIndex = startIndex < length ? Math.min(startIndex + pageSize, length) : startIndex + pageSize;
-      return `Страница ${startIndex + 1} - ${endIndex} из ${length}`;
+      return `${startIndex + 1} - ${endIndex} из ${length}`;
     };
   }
 
